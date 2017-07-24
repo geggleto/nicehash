@@ -1,0 +1,16 @@
+{
+    "name": "geggleto/crypto-api",
+    "authors": [
+        {
+            "name": "Glenn Eggleton",
+            "email": "geggleto@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Crypto\\" : "src"
+        }
+    }
+}
