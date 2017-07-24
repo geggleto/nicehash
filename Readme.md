@@ -8,12 +8,13 @@ If you have a feature request then open an issue on github.
 ### Supported Currencies
 - XMR
 - ETH
+- ETC
+- ZEC
 
 ### TODO
 - [ ] ZCash
 - [ ] Pascal
 - [ ] Sia
-- [ ] Ethereum Classic
 
 ### Usage For ETH
 

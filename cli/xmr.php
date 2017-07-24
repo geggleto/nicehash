@@ -13,11 +13,11 @@ $rev = $nanopool->getMonero(1000000);
 $cost = Crypto\Nicehash\NicehashCost::CryptoNight(0);
 $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
-print "CryptoNight EUR\n Cost {$costPrice} BTC/MH/Day\n Revenue: {$rev} BTC/MH/Day\n Profit: {$profit}\n\n";
+print "XMR - EUR\n Cost {$costPrice} BTC/MH/Day\n Revenue: {$rev} BTC/MH/Day\n Profit: {$profit}\n\n";
 
 
 $cost = Crypto\Nicehash\NicehashCost::CryptoNight(1);
 $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
-print "CryptoNight USD\n Cost {$costPrice} BTC/MH/Day\n Revenue: {$rev} BTC/MH/Day\n Profit: {$profit}\n\n";
+print "XMR - USD\n Cost {$costPrice} BTC/MH/Day\n Revenue: {$rev} BTC/MH/Day\n Profit: {$profit}\n\n";
 
