@@ -12,7 +12,6 @@ If you have a feature request then open an issue on github.
 - ZEC
 
 ### TODO
-- [ ] ZCash
 - [ ] Pascal
 - [ ] Sia
 
