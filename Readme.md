@@ -1,4 +1,4 @@
-#Nicehash Buying Power Profit Calculator
+# Nicehash Buying Power Profit Calculator
 
 Use at your own risk. Revenue estimations are from nanopool and are estimations. Your results will vary.
 This will not print you money. Don't spend what you cannot afford to lose.
