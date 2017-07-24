@@ -5,8 +5,17 @@ This will not print you money. Don't spend what you cannot afford to lose.
 
 If you have a feature request then open an issue on github.
 
+### Supported Currencies
+- XMR
+- ETH
 
-### Usage
+### TODO
+- [ ] ZCash
+- [ ] Pascal
+- [ ] Sia
+- [ ] Ethereum Classic
+
+### Usage For ETH
 
 `php cli/eth.php`
 
