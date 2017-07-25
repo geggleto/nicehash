@@ -10,6 +10,8 @@ If you have a feature request then open an issue on github.
 - ETH
 - ETC
 - ZEC
+- Pascal
+- Sia
 
 ### Supported WhatToMine Currencies
 - BTC
@@ -17,8 +19,7 @@ If you have a feature request then open an issue on github.
 - LTC
 
 ### TODO
-- [ ] Pascal
-- [ ] Sia
+
 
 ### Usage For ETH
 
