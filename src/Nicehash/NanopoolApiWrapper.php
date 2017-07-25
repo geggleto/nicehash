@@ -57,4 +57,17 @@ class NanopoolApiWrapper
 
         return round((float)$results['data']['day']['bitcoins'], 6);
     }
+
+    /**
+     * Hashrate in MH/s
+     * @param int $hashRate
+     * @return float
+     */
+    public function getPascal($hashRate = 0)
+    {
+        $endpoint = 'https://api.nanopool.org/v1/pasc/approximated_earnings/'.$hashRate;
+        $results = json_decode(file_get_contents($endpoint),true);
+
+        return round((float)$results['data']['day']['bitcoins'], 6);
+    }
 }
