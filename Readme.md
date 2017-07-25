@@ -1,15 +1,20 @@
 # Nicehash Buying Power Profit Calculator
 
-Use at your own risk. Revenue estimations are from nanopool and are estimations. Your results will vary.
+Use at your own risk. Revenue estimations are from nanopool/WhatToMine and are estimations. Your results will vary.
 This will not print you money. Don't spend what you cannot afford to lose.
 
 If you have a feature request then open an issue on github.
 
-### Supported Currencies
+### Supported Currencies Nanopool
 - XMR
 - ETH
 - ETC
 - ZEC
+
+### Supported WhatToMine Currencies
+- BTC
+- Dash
+- LTC
 
 ### TODO
 - [ ] Pascal

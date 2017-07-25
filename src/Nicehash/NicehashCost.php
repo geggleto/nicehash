@@ -83,4 +83,19 @@ class NicehashCost
     public static function Pascal($location = 1, $priceFactor = 1) {
         return new self('https://api.nicehash.com/api?method=orders.get&location='.$location.'&algo=25', $priceFactor);
     }
+
+    //1
+    public static function Btc($location = 1, $priceFactor = 1) {
+        return new self('https://api.nicehash.com/api?method=orders.get&location='.$location.'&algo=1', $priceFactor);
+    }
+
+    //0
+    public static function Litecoin($location = 1, $priceFactor = 1) {
+        return new self('https://api.nicehash.com/api?method=orders.get&location='.$location.'&algo=0', $priceFactor);
+    }
+
+    //0
+    public static function Dash($location = 1, $priceFactor = 1) {
+        return new self('https://api.nicehash.com/api?method=orders.get&location='.$location.'&algo=3', $priceFactor);
+    }
 }
