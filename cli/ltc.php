@@ -18,7 +18,7 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "LTC - EUR\n Cost {$costPrice} BTC/GH/Day\n Revenue: {$rev} BTC/GH/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('LTC-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('LTC-EUR', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/GH/Day']));
 }
 
 
@@ -28,6 +28,6 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "LTC - USD\n Cost {$costPrice} BTC/GH/Day\n Revenue: {$rev} BTC/GH/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('LTC-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('LTC-USD', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/GH/Day']));
 }
 

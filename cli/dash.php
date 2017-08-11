@@ -18,7 +18,7 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "Dash - EUR\n Cost {$costPrice} BTC/GH/Day\n Revenue: {$rev} BTC/GH/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('DASH-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('DASH-EUR', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/GH/Day']));
 }
 
 
@@ -28,6 +28,6 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "Dash - USD\n Cost {$costPrice} BTC/GH/Day\n Revenue: {$rev} BTC/GH/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('DASH-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('DASH-USD', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/GH/Day']));
 }
 

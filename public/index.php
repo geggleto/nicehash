@@ -25,7 +25,7 @@ $app->get('/', function(Request $req, Response $res, $args) {
         ];
 
         foreach ($index as $pair) {
-            $pairs[$pair] =  $predis->get($pair);
+            $pairs[$pair] =  json_decode($predis->get($pair), true);
         }
     }
 

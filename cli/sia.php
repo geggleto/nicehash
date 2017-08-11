@@ -18,7 +18,7 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "SiaCoin - EUR\n Cost {$costPrice} BTC/TH/Day\n Revenue: {$rev} BTC/TH/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('SIA-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('SIA-EUR', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/TH/Day']));
 }
 
 
@@ -28,6 +28,6 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "SiaCoin - USD\n Cost {$costPrice} BTC/TH/Day\n Revenue: {$rev} BTC/TH/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('SIA-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('SIA-USD', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/TH/Day']));
 }
 

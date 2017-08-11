@@ -18,7 +18,7 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "ZEC - EUR\n Cost {$costPrice} BTC/MSol/Day\n Revenue: {$rev} BTC/MSol/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('ZEC-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('ZEC-EUR', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/MSol/Day']));
 }
 
 
@@ -28,6 +28,6 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "ZEC - USD\n Cost {$costPrice} BTC/MSol/Day\n Revenue: {$rev} BTC/MSol/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('ZEC-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('ZEC-USD', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/MSol/Day']));
 }
 

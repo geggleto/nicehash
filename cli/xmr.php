@@ -18,7 +18,7 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "XMR - EUR\n Cost {$costPrice} BTC/MH/Day\n Revenue: {$rev} BTC/MH/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('XMR-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('XMR-EUR', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/MH/Day']));
 }
 
 
@@ -28,6 +28,6 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "XMR - USD\n Cost {$costPrice} BTC/MH/Day\n Revenue: {$rev} BTC/MH/Day\n Profit: {$profit}\n\n";
 if (isset($predis)) {
-    $predis->set('XMR-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+    $predis->set('XMR-USD', json_encode(['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/MH/Day']));
 }
 
