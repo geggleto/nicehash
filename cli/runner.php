@@ -26,3 +26,5 @@ foreach ($currencies as $currency)
 }
 
 print "Completed Run. If there was no output there's no profitable currencies\n\n";
+
+$predis->set('timestamp', time());

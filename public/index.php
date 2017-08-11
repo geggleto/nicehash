@@ -24,7 +24,11 @@ $container['view'] = function ($c) {
 
 $app->get('/', function(Request $req, Response $res, $args) {
     $stats = (new \Crypto\Services\GetCryptoStats())->getStats();
-    return $this->view->render($res, "index.twig", ['stats' => $stats]);
+
+    $predis = new \Predis\Client();
+    $date = date("c", $predis->get('timestamp'));
+
+    return $this->view->render($res, "index.twig", ['stats' => $stats, 'date' => $date]);
 });
 
 $app->get('/stats.json', function(Request $req, Response $res, $args) {
