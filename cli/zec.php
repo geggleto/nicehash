@@ -17,6 +17,9 @@ $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "ZEC - EUR\n Cost {$costPrice} BTC/MSol/Day\n Revenue: {$rev} BTC/MSol/Day\n Profit: {$profit}\n\n";
+if (isset($predis)) {
+    $predis->set('ZEC-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+}
 
 
 $cost = Crypto\Nicehash\NicehashCost::Equihash(1);
@@ -24,4 +27,7 @@ $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "ZEC - USD\n Cost {$costPrice} BTC/MSol/Day\n Revenue: {$rev} BTC/MSol/Day\n Profit: {$profit}\n\n";
+if (isset($predis)) {
+    $predis->set('ZEC-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+}
 

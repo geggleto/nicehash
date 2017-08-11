@@ -17,6 +17,9 @@ $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "XMR - EUR\n Cost {$costPrice} BTC/MH/Day\n Revenue: {$rev} BTC/MH/Day\n Profit: {$profit}\n\n";
+if (isset($predis)) {
+    $predis->set('XMR-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+}
 
 
 $cost = Crypto\Nicehash\NicehashCost::CryptoNight(1);
@@ -24,4 +27,7 @@ $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "XMR - USD\n Cost {$costPrice} BTC/MH/Day\n Revenue: {$rev} BTC/MH/Day\n Profit: {$profit}\n\n";
+if (isset($predis)) {
+    $predis->set('XMR-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+}
 

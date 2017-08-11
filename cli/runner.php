@@ -6,6 +6,12 @@ $currencies = [
     'btc', 'dash', 'etc', 'eth', 'ltc', 'pascal', 'sia', 'xmr', 'zec'
 ];
 
+try {
+    $predis = new Predis\Client();
+} catch(\Exception $exception) {
+    $predis = null;
+}
+
 print "#################################################\n";
 print "PROFIT RUNNER CRYPTO MINING TOOL\n";
 print "Tip Addr: 34qs5Pup438Y2qe4yLzrhgKTbHMXK1uNkt BTC\n";

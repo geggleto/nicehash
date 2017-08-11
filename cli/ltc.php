@@ -17,6 +17,9 @@ $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "LTC - EUR\n Cost {$costPrice} BTC/GH/Day\n Revenue: {$rev} BTC/GH/Day\n Profit: {$profit}\n\n";
+if (isset($predis)) {
+    $predis->set('LTC-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+}
 
 
 $cost = Crypto\Nicehash\NicehashCost::Litecoin(1);
@@ -24,4 +27,7 @@ $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "LTC - USD\n Cost {$costPrice} BTC/GH/Day\n Revenue: {$rev} BTC/GH/Day\n Profit: {$profit}\n\n";
+if (isset($predis)) {
+    $predis->set('LTC-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+}
 

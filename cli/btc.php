@@ -18,10 +18,15 @@ $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "BTC - EUR\n Cost {$costPrice} BTC/PH/Day\n Revenue: {$rev} BTC/PH/Day\n Profit: {$profit}\n\n";
 
+if (isset($predis)) {
+    $predis->set('BTC-EUR', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+}
 
 $cost = Crypto\Nicehash\NicehashCost::Btc(1);
 $costPrice = $cost->getFloorOrderPrice();
 $profit = $rev-$costPrice;
 if (!defined('PROFIT_RUNNER') || $profit>0)
 print "BTC - USD\n Cost {$costPrice} BTC/PH/Day\n Revenue: {$rev} BTC/PH/Day\n Profit: {$profit}\n\n";
-
+if (isset($predis)) {
+    $predis->set('BTC-USD', ['cost' => $costPrice, 'revenue' => $rev, 'profit' => $profit, 'unit' => 'BTC/PH/Day']);
+}
