@@ -7,29 +7,28 @@ include __DIR__ . '/../vendor/autoload.php';
 
 $app = new \Slim\App();
 
+$container = $app->getContainer();
+
+// Register Twig View helper
+$container['view'] = function ($c) {
+    $view = new \Slim\Views\Twig(__DIR__.'/../templates', [
+        'cache' => false
+    ]);
+
+    // Instantiate and add Slim specific extension
+    $basePath = rtrim(str_ireplace('index.php', '', $c['request']->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension($c['router'], $basePath));
+
+    return $view;
+};
+
 $app->get('/', function(Request $req, Response $res, $args) {
+    $stats = (new \Crypto\Services\GetCryptoStats())->getStats();
+    return $this->view->render($res, "index.twig", ['stats' => $stats]);
+});
 
-    $predis = new Predis\Client();
-
-    //Pull Stats from Redis
-    $currencies = [
-        'btc', 'dash', 'etc', 'eth', 'ltc', 'pasc', 'sia', 'xmr', 'zec'
-    ];
-
-    $pairs=[];
-
-    foreach ($currencies as $currency) {
-        $index = [
-            strtoupper($currency) ."-EUR",
-            strtoupper($currency) ."-USD",
-        ];
-
-        foreach ($index as $pair) {
-            $pairs[$pair] =  json_decode($predis->get($pair), true);
-        }
-    }
-
-    return $res->withJson($pairs);
+$app->get('/stats.json', function(Request $req, Response $res, $args) {
+    return $res->withJson((new \Crypto\Services\GetCryptoStats())->getStats());
 });
 
 $app->run();
