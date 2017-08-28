@@ -20,31 +20,6 @@ If you have a feature request then open an issue on github.
 
 ### TODO
 
-
-### Usage For ETH
-
-`php cli/eth.php`
-
-#### Output
-
-```
-#################################################
-CRYPTO MINING PROFIT TOOL
-Tip Addr: 34qs5Pup438Y2qe4yLzrhgKTbHMXK1uNkt BTC
-#################################################
-
-DaggerHashimoto EUR
- Cost 0.0242 BTC/GH/Day
- Revenue: 0.027364 BTC/GH/Day
- Profit: 0.003164
-
-DaggerHashimoto USD
- Cost 0.0249 BTC/GH/Day
- Revenue: 0.027364 BTC/GH/Day
- Profit: 0.002464
-```
-
-
 ### Suite Runner
 
 I have added a suite runner so you can define the currencies you want to check for. It defaults to all.
